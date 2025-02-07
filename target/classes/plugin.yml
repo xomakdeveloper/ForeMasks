@@ -1,0 +1,19 @@
+name: ForeMasks
+version: '1.0'
+main: org.xomakdev.foremasks.ForeMasks
+api-version: '1.16'
+prefix: FOREMASKS
+load: STARTUP
+authors: [xomakdev.exe]
+description: Universal masks that hide nickname plugin for roleplay servers by xomakdev.exe
+website: https://t.me/xomakdev
+commands:
+  foremasks:
+    description: Основная команда плагина.
+    usage: /foremasks <reload|set|unset>
+    aliases: [fm]
+    permission: foremasks.use-admin
+permissions:
+  foremasks.use-admin:
+    description: "Позволяет использовать команду /foremasks"
+    default: op
