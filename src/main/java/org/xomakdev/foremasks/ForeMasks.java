@@ -28,6 +28,8 @@ public final class ForeMasks extends JavaPlugin {
     private static ForeMasks instance;
     private ForeMasksPlaceholder placeholderExpansion;
 
+    private boolean tabEnabled = false;
+
     // Copyright (c) 2025 XomakDeveloper.
     //
     // This software is released under the AGPLv3 License with an additional non-commercial clause.
@@ -64,6 +66,15 @@ public final class ForeMasks extends JavaPlugin {
 
         ForeMasksListener.startTask();
 
+        if (checkTAB()) {
+            tabEnabled = true;
+            Bukkit.getConsoleSender().sendMessage(cr.color("&aСервер использует плагин TAB, Используем методы из TAB API для скрытия ников ✅"));
+        } else {
+            tabEnabled = false;
+            Bukkit.getConsoleSender().sendMessage(cr.color("&cСервер не использует плагин TAB, Используем стандартный метод скрытия ников для Vanilla ❌"));
+        }
+
+
         if (getPluginManager().getPlugin("PlaceholderAPI") != null) {
             placeholderExpansion = new ForeMasksPlaceholder(this);
             placeholderExpansion.register();
@@ -86,5 +97,17 @@ public final class ForeMasks extends JavaPlugin {
 
     public static ForeMasks getInstance() {
         return instance;
+    }
+
+    private boolean checkTAB() {
+        if (getPluginManager().getPlugin("TAB") != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isTABEnabled() {
+        return tabEnabled;
     }
 }
