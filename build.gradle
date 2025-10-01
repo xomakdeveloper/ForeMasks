@@ -1,0 +1,47 @@
+plugins {
+    id('java')
+}
+
+group = 'xyz.xomakdev'
+version = '1.2'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+    maven {
+        url = 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("net.dmulloy2:ProtocolLib:5.4.0")
+    compileOnly("com.github.NEZNAMY:TAB-API:5.2.5")
+}
+
+tasks {
+    compileJava {
+        options.release = 17
+    }
+    javadoc {
+        options.encoding = "UTF-8"
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(17)
+}

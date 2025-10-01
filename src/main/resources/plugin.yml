@@ -1,12 +1,17 @@
 name: ForeMasks
 version: '${project.version}'
-main: org.xomakdev.foremasks.ForeMasks
+main: xyz.xomakdev.foremasks.ForeMasks
 api-version: '1.16'
-prefix: FOREMASKS
+prefix: ForeMasks
 load: STARTUP
-authors: [xomakdev.exe]
-description: Universal masks that hide nickname plugin for roleplay servers by xomakdev.exe
+authors: [xomakdev]
+description: Universal masks that hide nickname plugin for roleplay servers by xomakdev
 website: https://t.me/xomakdev
+depend:
+  - ProtocolLib
+  - PlaceholderAPI
+softdepend:
+  - TAB
 commands:
   foremasks:
     description: Основная команда плагина.
