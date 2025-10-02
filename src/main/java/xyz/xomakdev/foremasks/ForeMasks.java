@@ -47,6 +47,8 @@ public final class ForeMasks extends JavaPlugin {
             expansion.register();
         }
         Metrics metrics = new Metrics(this, 27427);
+        Updater updater = new Updater(this, "xomakdeveloper", "ForeMasks");
+
         getLogger().info(color(" &2Fore Masks &7| &2v" + getDescription().getVersion() + " &fby @xomakdev"));
     }
     @Override

@@ -1,5 +1,5 @@
 name: ForeMasks
-version: '${project.version}'
+version: '1.2'
 main: xyz.xomakdev.foremasks.ForeMasks
 api-version: '1.16'
 prefix: ForeMasks
